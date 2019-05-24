@@ -1,0 +1,32 @@
+.mode{
+    margin-top: 10px;
+    width: 100px;
+    height:23px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 25px;
+    display: inline-block;
+    text-align: center;
+}
+
+.Synthy .Mode_Container{
+    text-align: left;
+}
+
+.up{
+    background-color: rgb(170, 255, 227);
+}
+
+.down{
+    background-color: rgb(140, 115, 255);
+}
+
+.random{
+    background-color: rgb(245, 255, 101);
+}
+
+.mode img{
+    width:12px;
+    height:12px;
+}

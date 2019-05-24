@@ -1,0 +1,19 @@
+.Play{
+    margin-top: 10px;
+    width: 100px;
+    height:23px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 25px;
+
+}
+
+.Play.Playing{
+    background-color: rgb(170, 255, 170);
+    
+}
+
+.Play.Paused{
+    background-color: rgba(155, 155, 255, 0.925);
+}

@@ -1,0 +1,27 @@
+.chord_container{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.add_button{
+    display:inline-block;
+    padding: 5px;
+    background-color: rgb(104, 104, 243);
+    cursor: pointer;
+}
+
+.delete_button{
+    display:inline-block;
+    padding: 5px;
+    background-color: rgb(255, 134, 134);
+    cursor: pointer;
+}
+
+.chord{
+    background-color: rgb(245, 181, 62);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 5px;
+}
