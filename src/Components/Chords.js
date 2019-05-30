@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import "./css/Chords.css";
-import {note_number_to_string} from './Audio.js';
+import "./css/Chords.scss";
+// import {note_number_to_string} from '../Audio.js/index.js';
 
 
 

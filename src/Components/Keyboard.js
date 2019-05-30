@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './css/Keyboard.css';
+import './css/Keyboard.scss';
 
 export default class Keyboard extends Component{
 
@@ -7,8 +7,6 @@ export default class Keyboard extends Component{
         super(props);
 
     }
-
-    
 
     render(){
         return (
@@ -51,14 +49,13 @@ class Key extends Component{
         
     }
 
-    toggleActive = () => {
-        
+    toggle_active = () => {
         this.props.active? this.props.remove_note(this.props.note_number) : this.props.add_note(this.props.note_number);
     }
 
     render(){
         return (
-            <div onClick={this.toggleActive} className={(this.props.active? "active ": "") + this.props.type + " Key " + this.props.note_number}>
+            <div onClick={this.toggle_active} className={(this.props.active? "active ": "") + this.props.type + " Key " + this.props.note_number}>
             </div>
           );
     }

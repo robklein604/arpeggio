@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import "./css/Mode.css";
-import {setMode} from './Audio.js';
-
-
+import "./css/Mode.scss";
+// import {setMode} from '../Audio.js/index.js';
 
 export default class Mode extends Component{
 

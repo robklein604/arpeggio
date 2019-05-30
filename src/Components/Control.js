@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './css/Control.css';
+import './css/Control.scss';
 import Draggable from 'react-draggable'; // The default
 
 export default class Control extends Component{
