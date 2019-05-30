@@ -4,7 +4,6 @@ import Mode from './Mode';
 import Keyboard from './Keyboard';
 import Control from './Control';
 import Chords from './Chords';
-// import {setBpm, setDecay, setDelay, setReverb, set_active_notes} from './Audio';
 import './css/Synthy.scss';
 
 export default class Synth extends Component {
@@ -70,7 +69,7 @@ export default class Synth extends Component {
             <div className="Synthy">
                 <h1>ARPEGGIO</h1>
                 <Play toggle_play_synth={this.props.Audio_Manager.toggle_play_synth}/>
-                <Mode/>
+                <Mode set_mode={this.props.Audio_Manager.set_mode}/>
                 <Keyboard active_notes={this.state.active_notes} add_note={this.add_note} remove_note={this.remove_note}/>
                 <Chords 
                     active_notes={this.state.active_notes}

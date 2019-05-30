@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import "./css/Chords.scss";
-// import {note_number_to_string} from '../Audio.js/index.js';
-
-
 
 export default class Chords extends Component{
 
@@ -25,7 +22,7 @@ export default class Chords extends Component{
             <div className="Chords">
                 <span>Chords:</span>
                 <input type="text" value={this.state.value} onChange={this.handleChange}></input>
-                <div onClick={()=>this.props.save_chord(this.state.value + " " + this.props.active_notes.map(n=>{return note_number_to_string(n)}))} className="add_button">add</div>
+                <div onClick={()=>this.props.save_chord(this.state.value + " " + this.props.active_notes.map(n=>{return this.props.note_number_to_string(n)}))} className="add_button">add</div>
                 <div onClick={this.props.delete_chord} className="delete_button">delete</div>
                 <div className="chord_container">
                     {chords_list}

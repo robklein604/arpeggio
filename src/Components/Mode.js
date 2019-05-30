@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import "./css/Mode.scss";
-// import {setMode} from '../Audio.js/index.js';
 
 export default class Mode extends Component{
 
@@ -9,23 +8,23 @@ export default class Mode extends Component{
         this.state = {mode: "up"}
     }
 
-    cycleMode = () => {
+    cycle_mode = () => {
         switch(this.state.mode){
             case "up":
                 this.setState({mode: "down"});
-                setMode("down");
+                this.props.set_mode("down");
                 break;
             case "down":
                 this.setState({mode: "random"});
-                setMode("random");
+                this.props.set_mode("random");
                 break;
             case "random":
                 this.setState({mode: "all"});
-                setMode("all");
+                this.props.set_mode("all");
                 break;
             case "all":
                 this.setState({mode: "up"});
-                setMode("up");
+                this.props.set_mode("up");
                 break;
         }
         
@@ -34,7 +33,7 @@ export default class Mode extends Component{
     render(){
         return (
             <div className="Mode_Container"><span>Mode:</span> 
-                <div onClick={this.cycleMode} className={"mode " + this.state.mode}> {this.state.mode} <img src={"/images/"+this.state.mode+".svg"}/> </div>
+                <div onClick={this.cycle_mode} className={"mode " + this.state.mode}> {this.state.mode} <img src={"/images/"+this.state.mode+".svg"}/> </div>
             </div>
           );
     }
