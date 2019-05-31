@@ -16,9 +16,9 @@ npm run tests
 
 todo: unit tests, integration, selenium
 
-### And coding style tests
+## Coding style
 
-I like to use snake_case for everything as it is the most readable.
+I like to use snake_case for everything as it is the most readable to me. 
 
 ## Built With
 
@@ -29,7 +29,3 @@ I like to use snake_case for everything as it is the most readable.
 ## Authors
 
 * **Rob Klein** - (https://github.com/RobKlein604)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
