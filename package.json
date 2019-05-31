@@ -8,6 +8,7 @@
     "react-dom": "^16.8.6",
     "react-draggable": "^3.3.0",
     "react-scripts": "3.0.0",
+    "sinon": "^7.3.2",
     "tone": "^13.4.9"
   },
   "scripts": {

@@ -4,9 +4,9 @@ import Mode from './Mode';
 import Keyboard from './Keyboard';
 import Control from './Control';
 import Chords from './Chords';
-import './css/Synthy.scss';
+import './css/Arpeggio.scss';
 
-export default class Synth extends Component {
+export default class Arpeggio extends Component {
 
     constructor(props){
         super(props);
@@ -66,7 +66,7 @@ export default class Synth extends Component {
 
     render(){
         return (
-            <div className="Synthy">
+            <div className="Arpeggio">
                 <h1>ARPEGGIO</h1>
                 <Play toggle_play_synth={this.props.Audio_Manager.toggle_play_synth}/>
                 <Mode set_mode={this.props.Audio_Manager.set_mode}/>

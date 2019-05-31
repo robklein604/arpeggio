@@ -15,8 +15,13 @@ export default class Play extends Component{
     }
 
     render(){
+
         return (
-            <div onClick={this.toggle_play} className={this.state.playing?"Play Playing" : "Play Paused"}> {this.state.playing? "Pause" : "Play"} </div>
+            <div 
+                onClick={this.toggle_play} 
+                className={"Play " + (this.state.playing?"Playing" : "Paused")}> 
+                {this.state.playing? "Pause" : "Play"} 
+            </div>
           );
     }
 }

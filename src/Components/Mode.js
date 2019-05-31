@@ -33,7 +33,11 @@ export default class Mode extends Component{
     render(){
         return (
             <div className="Mode_Container"><span>Mode:</span> 
-                <div onClick={this.cycle_mode} className={"mode " + this.state.mode}> {this.state.mode} <img src={"/images/"+this.state.mode+".svg"}/> </div>
+                <div 
+                    onClick={this.cycle_mode} 
+                    className={"mode " + this.state.mode}> {this.state.mode} 
+                    <img src={"/images/"+this.state.mode+".svg"}/> 
+                </div>
             </div>
           );
     }

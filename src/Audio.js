@@ -1,8 +1,7 @@
-
 export default class Audio_Manager {
 
     constructor(Tone){
-        this.Tone = Tone;
+        this._Tone = Tone;
         this.reverb = new Tone.JCReverb(0.4);
         this.delay = new Tone.FeedbackDelay("16n", 0.5);
 
@@ -27,22 +26,22 @@ export default class Audio_Manager {
         
         this.notes = [];
         this.note_index = 0;
-        this.mode = "up";
+        this._mode = "up";
     }
 
     toggle_play_synth = () => {
-        this.Tone.Transport.toggle();
+        this._Tone.Transport.toggle();
     }
 
     set_bpm = (bpm) => {
-        this.Tone.Transport.bpm.value = 80 + bpm * 4;
+        this._Tone.Transport.bpm.value = 80 + bpm * 4;
     }
 
     trigger_synth = (time) => {
         if(this.notes.length > 0){
     
             let note_number;
-            switch(this.mode){
+            switch(this._mode){
                 case "up":
                     this.note_index++;
                     note_number = this.notes[this.note_index % this.notes.length];
@@ -89,7 +88,7 @@ export default class Audio_Manager {
     }
     
     set_mode = (mode) => {
-        this.mode = mode;
+        this._mode = mode;
     }
 
     set_active_notes = (active_notes) => {

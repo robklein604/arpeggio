@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import Synthy from './Components/Synthy';
+import Arpeggio from './Components/Arpeggio';
 import Audio_Manager from './Audio.js';
 import Tone from 'tone';
 
 function App() {
-  const Audio = new Audio_Manager(Tone);
+  const audio_manager = new Audio_Manager(Tone);
   return (
     <div className="App">
-      <Synthy Audio_Manager = {Audio}/>
+      <Arpeggio Audio_Manager = {audio_manager}/>
     </div>
   );
 }

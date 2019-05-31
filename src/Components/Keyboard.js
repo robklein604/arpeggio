@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 import './css/Keyboard.scss';
 
 export default class Keyboard extends Component{
-
-    constructor(props){
-        super(props);
-
-    }
-
     render(){
         return (
             <div className="Keyboard">
@@ -22,7 +16,6 @@ export default class Keyboard extends Component{
 }
 
 class Octave extends Component{
-
     render(){
         return (
             <div className="Octave">
@@ -44,10 +37,6 @@ class Octave extends Component{
 }
 
 class Key extends Component{
-    constructor(props){
-        super(props);
-        
-    }
 
     toggle_active = () => {
         this.props.active? this.props.remove_note(this.props.note_number) : this.props.add_note(this.props.note_number);
@@ -60,3 +49,5 @@ class Key extends Component{
           );
     }
 }
+
+export {Key, Octave};
