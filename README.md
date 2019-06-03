@@ -9,12 +9,7 @@ npm start
 
 ## Running the tests
 
-Tests will be added soon...
 npm run tests
-
-### Break down into end to end tests
-
-todo: unit tests, integration, selenium
 
 ## Coding style
 
