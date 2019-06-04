@@ -33,7 +33,7 @@ export default class Mode extends Component{
                 <div 
                     onClick={this.cycle_mode} 
                     className={"mode " + this.state.mode}>
-                    <img src={"/images/"+this.state.mode+".svg"}/> 
+                    <img src={"/arpeggio/images/"+this.state.mode+".svg"}/> 
                 </div>
             </div>
           );

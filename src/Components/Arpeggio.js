@@ -76,7 +76,7 @@ export default class Arpeggio extends Component {
             <div className="Arpeggio">
                 
                 <div className="Header">
-                    <img className="Logo" src="/images/keyboard.svg"/>
+                    <img className="Logo" src="/arpeggio/images/keyboard.svg"/>
                     <Play toggle_play_synth={this.props.Audio_Manager.toggle_play_synth}/>
                     <Mode set_mode={this.props.Audio_Manager.set_mode}/>
                 </div>
