@@ -20,7 +20,7 @@ export default class Play extends Component{
             <div 
                 onClick={this.toggle_play} 
                 className={"Play " + (this.state.playing?"Playing" : "Paused")}> 
-                {this.state.playing? "Pause" : "Play"} 
+                
             </div>
           );
     }

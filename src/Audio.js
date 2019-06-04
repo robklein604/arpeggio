@@ -2,31 +2,28 @@ export default class Audio_Manager {
 
     constructor(Tone){
         this._Tone = Tone;
-        this.reverb = new Tone.JCReverb(0.4);
-        this.delay = new Tone.FeedbackDelay("16n", 0.5);
 
         const pan_vol = new Tone.PanVol(0, -9);
         const pan_vol_2 = new Tone.PanVol(0, -3);
         const limiter = new Tone.Limiter(-3).connect(Tone.Master);
-
-        this.Synth = new Tone.PolySynth(8, Tone.Synth).chain(pan_vol, this.delay, pan_vol_2, this.reverb, limiter);
+        this.filter = new Tone.Filter(2000, "lowpass");
+        this.filter.Q.value = 6;
+        this.Synth = new Tone.PolySynth(8, Tone.Synth).chain(pan_vol, this.filter, pan_vol_2, limiter);
 
         this.Synth.voices.forEach(s=>{
-            s.envelope.release = 2.5;
+            s.envelope.release = 0.75;
             s.envelope.sustain = 1;
         });
 
         Tone.Transport.schedule(this.trigger_synth, 0);
-        Tone.Transport.loopEnd = '1n';
+        Tone.Transport.loopEnd = '4n';
         Tone.Transport.loop = true;
-        Tone.Transport.bpm.value = 180 * 4;
-        
-        this.delay.wet.value = 0;
-        this.reverb.wet.value = 0;
+        Tone.Transport.bpm.value = 80 + (160 * 4);
         
         this.notes = [];
         this.note_index = 0;
-        this._mode = "up";
+        this._mode = "updown";
+        this._direction = "up";
     }
 
     toggle_play_synth = () => {
@@ -34,42 +31,53 @@ export default class Audio_Manager {
     }
 
     set_bpm = (bpm) => {
-        this._Tone.Transport.bpm.value = 80 + bpm * 4;
+        this._Tone.Transport.bpm.value = 80 + (bpm * 4);
     }
 
     trigger_synth = (time) => {
         if(this.notes.length > 0){
-    
-            let note_number;
+            
             switch(this._mode){
                 case "up":
                     this.note_index++;
-                    note_number = this.notes[this.note_index % this.notes.length];
+                    if(this.note_index >= this.notes.length) this.note_index = 0;
+                    
                     break;
                 case "down":
-                    this.note_index--;
-                    note_number = this.notes[this.note_index % this.notes.length];
+                    this.note_index--;      
+                    if(this.note_index < 0) this.note_index = this.notes.length-1;
+
                     break;
-                case "random":
-                    this.note_index = Math.floor(Math.random() * this.notes.length);
-                    note_number = this.notes[this.note_index];
+                case "updown":
+                    this._direction == "up" ? this.note_index ++ : this.note_index --;
+
+                    if(this.note_index == this.notes.length-1) this._direction = "down";
+                    if(this.note_index == 0) this._direction = "up";
                     break;
-                case "all":
-                    let note_numbers = this.notes.map(n=> {return this.note_number_to_string(n);});
-                    this.Synth.triggerAttackRelease(note_numbers, 0.01, time);
-                    return;
             }
+
+            // if(!this.note_index){
+            //     this.note_index = 0; //bug
+            // }
             
-            var element = document.getElementsByClassName(note_number)[0];
+            let note_to_play = this.notes[this.note_index];
+
+            var element = document.getElementsByClassName(note_to_play)[0];
             if(element)element.classList.add("playing");
 
             setTimeout(() => {
                 if(element)element.classList.remove("playing");
             },100);
 
-            const note_number_string = this.note_number_to_string(note_number);
-            this.Synth.triggerAttackRelease(note_number_string, 0.01, time);
+            const note_to_play_str = this.note_number_to_string(note_to_play);
+
+            if(note_to_play_str) this.Synth.triggerAttackRelease(note_to_play_str, 0.01, time);
+            
         }
+    }
+
+    set_cutoff = (freq) => {
+        this.filter.frequency.value = freq;
     }
 
     set_decay = (value) => {
@@ -77,14 +85,6 @@ export default class Audio_Manager {
         this.Synth.voices.forEach(s=>{
             s.envelope.release = time;
         });
-    }
-
-    set_delay = (v) => {
-        this.delay.wet.value = v / 100;
-    }
-    
-    set_reverb =(v) => {
-        this.reverb.wet.value = v / 100;
     }
     
     set_mode = (mode) => {

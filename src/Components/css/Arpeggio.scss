@@ -1,24 +1,66 @@
-
+body{
+    background-color: #e7e7e7;
+}
 
 .Arpeggio{
     position: relative;
     height: 100%;
-    background-color:#f2e8bb;
-    padding:13px;
+    
     box-sizing: border-box;
+
+    .Header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(73, 73, 73);
+        background-color: #f2e8bb;
+        height: 75px;
+        align-items: center;
+    
+        h1{
+            font-family: Segoe UI;
+            font-weight: 800;
+            font-size: 40px;
+            margin: 0;
+            text-align: left;
+            line-height: 75px;
+            margin-left: 10px;
+        }
+    
+        .Mode_Container{
+            margin-right:10px;
+            vertical-align: middle;
+        }
+
+        .Logo{
+            width:60px;
+            height:60px;
+            margin-left: 10px;
+            margin-right: 56px;
+        }
+    }
+
+    .Content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: calc(100vh - 75px);
+        box-sizing: border-box;
+        padding: 10px;
+        max-width: 600px;
+        margin: auto;
+        background-color: #f2e8bb;
+        min-width: 330px;
+        border: 1px solid rgb(114, 114, 114);
+        border-top: none;
+    }
 }
 
-.Arpeggio .Mode_Container{
-    text-align: left;
-}
 
-h1{
-    font-family: Segoe UI;
-    font-weight: 800;
-    font-size: 40px;
-    margin: 0;
-    text-align: left;
-}
+
+
+
+
 
 .Arpeggio .Control_Bar{
     display: flex;

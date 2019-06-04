@@ -1,5 +1,6 @@
 .Control{
     pointer-events: none;
+    
 }
 
 .Control .Axis{
@@ -7,7 +8,7 @@
 }
 
 .Control .Axis{
-    height: 200px;
+    height: 160px;
     width: 5px;
     background-color: black;
     margin: auto;
@@ -24,24 +25,27 @@
 }
 
 .Control .Value{
-    width: 65px;
+    text-align: center;
+    width: 55px;
     background-color: #cccccc;
-    padding: 5px 20px 5px 20px;
+    padding: 5px 10px 5px 10px;
     font-family: Segoe UI;
     font-weight: 600;
     /* border-radius:10px; */
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
+    font-size: 13px;
     
 }
 
 .Control .Name{
+    text-align: center;
     font-family: Segoe UI;
     font-weight: 800;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 .Control .Units{
-    font-size: 14px;
+    font-size: 12px;
 }

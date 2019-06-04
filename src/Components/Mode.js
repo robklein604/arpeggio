@@ -5,7 +5,7 @@ export default class Mode extends Component{
 
     constructor(props){
         super(props);
-        this.state = {mode: "up"}
+        this.state = {mode: "updown"}
     }
 
     cycle_mode = () => {
@@ -15,14 +15,10 @@ export default class Mode extends Component{
                 this.props.set_mode("down");
                 break;
             case "down":
-                this.setState({mode: "random"});
-                this.props.set_mode("random");
+                this.setState({mode: "updown"});
+                this.props.set_mode("updown");
                 break;
-            case "random":
-                this.setState({mode: "all"});
-                this.props.set_mode("all");
-                break;
-            case "all":
+            case "updown":
                 this.setState({mode: "up"});
                 this.props.set_mode("up");
                 break;
@@ -32,10 +28,11 @@ export default class Mode extends Component{
 
     render(){
         return (
-            <div className="Mode_Container"><span>Mode:</span> 
+            <div className="Mode_Container">
+                <p>Mode:</p> 
                 <div 
                     onClick={this.cycle_mode} 
-                    className={"mode " + this.state.mode}> {this.state.mode} 
+                    className={"mode " + this.state.mode}>
                     <img src={"/images/"+this.state.mode+".svg"}/> 
                 </div>
             </div>

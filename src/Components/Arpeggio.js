@@ -12,7 +12,13 @@ export default class Arpeggio extends Component {
         super(props);
         this.state={
             active_notes:[],
-            chords:[]
+            chords:[
+                {name: "C min", notes: [36, 39, 43, 48, 51]},
+                {name: "Bb maj", notes: [34, 38, 41, 46, 50]},
+                {name: "G maj", notes: [32, 36, 39, 44, 48]},
+                // {name: "Cmin", notes: []},
+                // {name: "Cmin", notes: []},
+            ]
         }
     }
 
@@ -65,26 +71,33 @@ export default class Arpeggio extends Component {
     }
 
     render(){
+        
         return (
             <div className="Arpeggio">
-                <h1>ARPEGGIO</h1>
-                <Play toggle_play_synth={this.props.Audio_Manager.toggle_play_synth}/>
-                <Mode set_mode={this.props.Audio_Manager.set_mode}/>
-                <Keyboard active_notes={this.state.active_notes} add_note={this.add_note} remove_note={this.remove_note}/>
-                <Chords 
-                    active_notes={this.state.active_notes}
-                    chords={this.state.chords}
-                    save_chord={this.save_chord}
-                    load_chord={this.load_chord}
-                    delete_chord={this.delete_chord}
-                    note_number_to_string={this.props.Audio_Manager.note_number_to_string}
-                />
-                <div className="Control_Bar">
-                    <Control type="Speed" default={180} min={20} max={200} units="bpm" func={this.props.Audio_Manager.set_bpm}/>
-                    <Control type="Decay" default={2500} min={50} max={5000} units="ms" func={this.props.Audio_Manager.set_decay}/>
-                    <Control type="Tone" default={100} min={10} max={2000} units="hz" />
-                    <Control type="Delay" default={0} min={0} max={100} units="%" func={this.props.Audio_Manager.set_delay}/>
-                    <Control type="Space" default={0} min={0} max={100} units="%" func={this.props.Audio_Manager.set_reverb}/>
+                
+                <div className="Header">
+                    <img className="Logo" src="/images/keyboard.svg"/>
+                    <Play toggle_play_synth={this.props.Audio_Manager.toggle_play_synth}/>
+                    <Mode set_mode={this.props.Audio_Manager.set_mode}/>
+                </div>
+
+                <div className="Content">
+                    <Keyboard active_notes={this.state.active_notes} add_note={this.add_note} remove_note={this.remove_note}/>
+                    
+                    <Chords 
+                        active_notes={this.state.active_notes}
+                        chords={this.state.chords}
+                        save_chord={this.save_chord}
+                        load_chord={this.load_chord}
+                        delete_chord={this.delete_chord}
+                        note_number_to_string={this.props.Audio_Manager.note_number_to_string}
+                    />
+                    <div className="Control_Bar">
+                        <Control type="Speed" default={160} min={20} max={200} units="bpm" func={this.props.Audio_Manager.set_bpm}/>
+                        <Control type="Decay" default={750} min={50} max={5000} units="ms" func={this.props.Audio_Manager.set_decay}/>
+                        <Control type="Tone" default={1500} min={10} max={2000} units="hz" func={this.props.Audio_Manager.set_cutoff} />
+                    </div>
+
                 </div>
             </div>
         );

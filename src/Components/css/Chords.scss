@@ -1,27 +1,57 @@
-.chord_container{
-    border: 1px solid black;
-    padding: 10px;
+.Chords{
+
+    span{
+        font-weight: 500;
+        margin-right:10px;
+    }
+
+    input{
+        width: 100px;
+    }
+
+    .chord_container{
+        margin-top: 10px;
+        border: 1px solid rgb(102, 102, 102);
+        padding: 10px;
+
+    }
+    
+    .add_button{
+        margin-left: 5px;
+        border-radius: 10px;
+        display:inline-block;
+        padding: 5px;
+        background-color: rgb(142, 142, 247);
+        cursor: pointer;
+    }
+
+    .add_button:hover{
+        background-color: rgb(98, 98, 241);
+    }
+    
+    .delete_button{
+        margin-left: 5px;
+        border-radius: 10px;
+        display:inline-block;
+        padding: 5px;
+        background-color: rgb(255, 134, 134);
+        cursor: pointer;
+    }
+
+    .delete_button:hover{
+        background-color: rgb(253, 94, 94);
+    }
+    
+    .chord{
+        background-color: rgb(156, 236, 146);
+        padding: 8px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .chord:hover{
+        background-color: rgb(119, 235, 103);
+    }
 }
 
-.add_button{
-    display:inline-block;
-    padding: 5px;
-    background-color: rgb(104, 104, 243);
-    cursor: pointer;
-}
-
-.delete_button{
-    display:inline-block;
-    padding: 5px;
-    background-color: rgb(255, 134, 134);
-    cursor: pointer;
-}
-
-.chord{
-    background-color: rgb(245, 181, 62);
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 20px;
-    display: inline-block;
-    margin: 5px;
-}
