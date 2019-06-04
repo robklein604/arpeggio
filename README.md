@@ -8,7 +8,7 @@ npm start
 
 ## Running the tests
 
-npm run tests
+npm run test
 
 ## Coding style
 
