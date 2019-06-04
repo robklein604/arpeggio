@@ -1,7 +1,6 @@
 # Arpeggio
 
 Arpeggio is a music synthesizer web application built with react and tone js. 
-(demo video?)
 
 ## Running the application
 
