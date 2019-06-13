@@ -51,14 +51,10 @@ export default class Audio_Manager {
                 case "updown":
                     this._direction == "up" ? this.note_index ++ : this.note_index --;
 
-                    if(this.note_index == this.notes.length-1) this._direction = "down";
-                    if(this.note_index == 0) this._direction = "up";
+                    if(this.note_index >= this.notes.length-1) this._direction = "down";
+                    if(this.note_index <= 0) this._direction = "up";
                     break;
             }
-
-            // if(!this.note_index){
-            //     this.note_index = 0; //bug
-            // }
             
             let note_to_play = this.notes[this.note_index];
 
