@@ -1,9 +1,17 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import "./css/Play.scss";
 
-export default class Play extends Component{
+interface IProps {
+    togglePlaySynth: Function
+}
 
-    constructor(props){
+interface IState {
+    playing: boolean
+}
+
+export default class Play extends React.Component<IProps, IState>{
+
+    constructor(props: IProps){
         super(props);
         this.state = {playing: false}
     }
@@ -11,7 +19,7 @@ export default class Play extends Component{
     toggle_play = () => {
         this.setState({playing: !this.state.playing});
         //play a middle 'C' for the duration of an 8th note
-        this.props.toggle_play_synth();
+        this.props.togglePlaySynth();
     }
 
     render(){

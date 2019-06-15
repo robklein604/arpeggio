@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Arpeggio from './Components/Arpeggio';
-import Audio_Manager from './Audio.js';
+import Audio_Manager from './Audio';
 import Tone from 'tone';
 
 function App() {
