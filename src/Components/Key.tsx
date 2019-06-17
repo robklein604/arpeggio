@@ -20,8 +20,10 @@ export default class Key extends React.Component<IProps, IState>{
     }
 
     render(){
+        const keyType = this.props.type === KeyType.Black? "Black" : (this.props.type === KeyType.White? "White" : "");
+        const className = (this.props.active? "active ": "") + keyType + " Key " + this.props.noteNumber
         return (
-            <div onClick={this.toggleActive} className={(this.props.active? "active ": "") + this.props.type + " Key " + this.props.noteNumber}>
+            <div onClick={this.toggleActive} className={className}>
             </div>
           );
     }

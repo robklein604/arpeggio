@@ -14,9 +14,9 @@ enum KeyType{
     White
 }
 
-interface Chord{
-    name: string;
-    notes: Array<number>;
+class Chord{
+    name!: string;
+    notes!: Array<number>;
 }
 
 export {Direction, Mode, KeyType, Chord};

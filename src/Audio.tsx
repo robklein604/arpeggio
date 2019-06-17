@@ -1,4 +1,3 @@
-import '@types/tone';
 import {Direction, Mode} from './Interfaces';
 import Tone from 'tone';
 import { noteNumberToString } from './Static';
@@ -94,11 +93,11 @@ export default class Audio_Manager {
         });
     }
 
-    setMode(value: Mode){
+    setMode = (value: Mode) => {
         this.mode = value;
     }
 
-    setNotes(value: Array<number>) {
+    setNotes = (value: Array<number>) => {
         this.notes = value;
     }
 }
