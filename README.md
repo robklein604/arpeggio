@@ -16,10 +16,6 @@ npm start
 
 npm run test
 
-## Coding style
-
-I like to use snake_case for everything as it is the most readable to me. 
-
 ## Built With
 
 * [Tone Js](http://https://tonejs.github.io/)
