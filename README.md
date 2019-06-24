@@ -17,6 +17,15 @@ npm start
 
 npm run test
 
+I am adding full unit test coverage using Enzyme and Jest
+
+## Coding style
+
+My goal is to continually improve the project with best front end practices:
+- Responsive design
+- Test coverage
+- Dependency Injection
+
 ## Built With
 
 * [Tone Js](http://https://tonejs.github.io/)
